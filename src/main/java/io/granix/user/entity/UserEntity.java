@@ -1,7 +1,7 @@
 package io.granix.user.entity;
 
 import io.granix.common.converter.MapToJsonConverter;
-import io.quarkus.hibernate.orm.panache.PanacheEntity;
+import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 import jakarta.persistence.*;
 
 import java.util.Date;
@@ -10,7 +10,7 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "user")
-public class UserEntity extends PanacheEntity {
+public class UserEntity extends PanacheEntityBase {
     // System information
     @Id
     public UUID id;
