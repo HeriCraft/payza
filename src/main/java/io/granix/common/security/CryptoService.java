@@ -46,7 +46,9 @@ public class CryptoService {
             InvalidKeyException,
             IllegalBlockSizeException,
             BadPaddingException {
-        var cipher = Cipher.getInstance(ALGO);
+        var cipher = Cipher.getInstance("AES/GCM/NoPadding");
+        System.out.println("TAG_LENGTH:" + TAG_LENGTH);
+        System.out.println("IV:" + IV);
         var spec = new GCMParameterSpec(TAG_LENGTH, IV);
         cipher.init(Cipher.ENCRYPT_MODE, getSecretKey(), spec);
         var encrypted = cipher.doFinal(plain.getBytes(StandardCharsets.UTF_8));
@@ -60,7 +62,7 @@ public class CryptoService {
             InvalidKeyException,
             IllegalBlockSizeException,
             BadPaddingException {
-        var cipher = Cipher.getInstance(ALGO);
+        var cipher = Cipher.getInstance("AES/GCM/NoPadding");
         var spec = new GCMParameterSpec(TAG_LENGTH, IV);
         cipher.init(Cipher.DECRYPT_MODE, getSecretKey(), spec);
         var decoded = Base64.getDecoder().decode(encrypted);
