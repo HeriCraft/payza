@@ -1,13 +1,16 @@
 package io.granix.user.dto.request;
 
 import jakarta.enterprise.context.ApplicationScoped;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 
 @ApplicationScoped
-@AllArgsConstructor
-@NoArgsConstructor
 public class UserAuthenticationRequest {
     public String msisdn;
     public String password;
+
+    public UserAuthenticationRequest(String msisdn, String password) {
+        this.msisdn = msisdn;
+        this.password = password;
+    }
+
+    public UserAuthenticationRequest() {}
 }
