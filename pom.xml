@@ -80,11 +80,10 @@
             <artifactId>microprofile-config-api</artifactId>
             <version>3.1</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.40</version>
+            <groupId>jakarta.enterprise</groupId>
+            <artifactId>jakarta.enterprise.cdi-api</artifactId>
+            <version>4.1.0</version> <!-- Use the appropriate version for your project -->
             <scope>provided</scope>
         </dependency>
         <dependency>
