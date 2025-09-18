@@ -60,7 +60,8 @@ public class UserService {
             NoSuchAlgorithmException,
             BadPaddingException,
             InvalidKeyException {
-        // Vérifier unicité
+
+        // Verify that msisdn doesn't exist in database
         if (repository.find("msisdnEncrypted", cryptoService.encrypt(msisdn)).firstResult() != null)
             throw new IllegalArgumentException("Phone number already in use");
 
