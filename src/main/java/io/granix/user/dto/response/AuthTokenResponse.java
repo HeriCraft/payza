@@ -1,8 +1,6 @@
 package io.granix.user.dto.response;
 
 import jakarta.enterprise.context.ApplicationScoped;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 
 @ApplicationScoped
 public class AuthTokenResponse {
